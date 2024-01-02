@@ -10,29 +10,14 @@ public class GradeMessage {
         String grade = scanner.next();
         scanner.close();
 
-        String message;
-
-        switch (grade){
-            case "A":
-                message = "Excellent job!";
-                break;
-            case "B":
-                message = "Great job!";
-                break;
-            case "C":
-                message = "Good job!";
-                break;
-
-            case "D":
-                message = "You can do better";
-                break;
-            case "F":
-                message = "try again";
-                        break;
-            default:
-                message = "unexpected input";
-                break;
-        }
+        String message = switch (grade) {
+            case "A" -> "Excellent job!";
+            case "B" -> "Great job!";
+            case "C" -> "Good job!";
+            case "D" -> "You can do better";
+            case "F" -> "try again";
+            default -> "unexpected input";
+        };
 
         System.out.println(message);
     }
